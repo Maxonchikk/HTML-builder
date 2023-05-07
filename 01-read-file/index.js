@@ -4,4 +4,6 @@ const readableStream = fs.createReadStream(path.join(__dirname, 'text.txt'), 'ut
 
 readableStream.on('data', (chunk) => {
     console.log(chunk);
-})
+});
+
+readableStream.on('error', error => console.log('Error', error.message));
